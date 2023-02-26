@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!-- data-bs-theme="dark" -->
+<!-- data-bs-theme="light" -->
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculator Javascript 15</title>
+
+        <!-- favicon -->
+        <link rel="icon" href="./img/java_script_32.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="./img/java_script_16.png" sizes="16x16" type="image/png" />
+
+        <!-- BOOTSTRAP -->
+        <link rel="stylesheet" href="./vendor/bootstrap/bootstrap.min.css" />
+
+        <!-- FONT GOOGLE -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="./vendor/fontawesome/css/all.min.css" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/style.css" />
+
+        <!-- ClEAVE -->
+        <script src="./js/cleave.min.js"></script>
+
+        <!-- JS -->
+        <script defer src="./js/index.js"></script>
+    </head>
+    <body>
+        <section class="calculator-section">
+            <div class="container">
+                <div class="calculator">
+                    <div class="control">
+                        <div class="change_color">
+                            <label for="customRange1" class="form-label m-0">Color</label>
+                            <input
+                                type="range"
+                                class="form-range"
+                                min="0"
+                                max="360"
+                                id="customRange1"
+                            />
+                        </div>
+                        <div class="toggle_theme">
+                            <i
+                                class="toggle_theme-icon toggle_theme-sun hide fa-solid fa-sun"
+                            ></i>
+                            <i
+                                class="toggle_theme-icon toggle_theme-moon fa-solid fa-moon"
+                            ></i>
+                        </div>
+                    </div>
+                    <header class="calculator-header mt-5">
+                        <h1 class="fw-bold text-center">Calculator Javascript 15</h1>
+                    </header>
+                    <div class="calculator-content d-flex align-items-start mt-5">
+                        <div
+                            class="content_left nav flex-column nav-pills me-3 gap-1"
+                            id="v-pills-tab"
+                            role="tablist"
+                            aria-orientation="vertical"
+                        >
+                            <div class="btn_nav">
+                                <i class="fa-solid fa-chevron-right"></i>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                            <button
+                                class="nav-link active fw-semibold"
+                                id="calMarks"
+                                data-bs-toggle="pill"
+                                data-bs-target="#v-calMarks"
+                                type="button"
+                                role="tab"
+                                aria-controls="v-calMarks"
+                                aria-selected="true"
+                            >
+                                Bài 1
+                            </button>
+                            <button
+                                class="nav-link fw-semibold"
+                                id="calElec"
+                                data-bs-toggle="pill"
+                                data-bs-target="#v-calElec"
+                                type="button"
+                                role="tab"
+                                aria-controls="v-calElec"
+                                aria-selected="false"
+                            >
+                                Bài 2
+                            </button>
+                            <button
+                                class="nav-link fw-semibold"
+                                id="calTncn"
+                                data-bs-toggle="pill"
+                                data-bs-target="#v-calTncn"
+                                type="button"
+                                role="tab"
+                                aria-controls="v-calTncn"
+                                aria-selected="false"
+                            >
+                                Bài 3
+                            </button>
+                            <button
+                                class="nav-link fw-semibold"
+                                id="calCap"
+                                data-bs-toggle="pill"
+                                data-bs-target="#v-calCap"
+                                type="button"
+                                role="tab"
+                                aria-controls="v-calCap"
+                                aria-selected="false"
+                            >
+                                Bài 4
+                            </button>
+                        </div>
+                        <div class="content_right tab-content" id="v-pills-tabContent">
+                            <div
+                                class="tab-pane fade show active"
+                                id="v-calMarks"
+                                role="tabpanel"
+                                aria-labelledby="calMarks"
+                                tabindex="0"
+                            >
+                                <h3 class="fw-semibold">Tính điểm thi</h3>
+                                <form class="calMarks d-flex flex-column gap-2 mt-4">
+                                    <div class="form-floating">
+                                        <input
+                                            type="number"
+                                            class="calMarks_input-benchMark form-control"
+                                            id="benchMark"
+                                            placeholder="Điểm chuẩn"
+                                            required
+                                        />
+                                        <label for="benchMark">Điểm chuẩn</label>
+                                    </div>
+                                    <div
+                                        class="d-lg-flex align-items-center justify-content-between"
+                                    >
+                                        <div class="form-floating">
+                                            <select
+                                                class="calMarks_select-district form-select"
+                                                id="floatingSelect"
+                                            >
+                                                <option selected value="0">
+                                                    Chọn khu vực
+                                                </option>
+                                                <option value="A">Khu vực A</option>
+                                                <option value="B">Khu vực B</option>
+                                                <option value="C">Khu vực C</option>
+                                            </select>
+                                            <label for="floatingSelect">Khu vực</label>
+                                        </div>
+                                        <div
+                                            class="calMarks_radios d-lg-flex mt-2 mt-lg-0 gap-2 gap-xl-5"
+                                        >
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="calMarksRadioOptions"
+                                                    id="calMarksRadio0"
+                                                    value="0"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="calMarksRadio0"
+                                                    >Đối tượng 0</label
+                                                >
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="calMarksRadioOptions"
+                                                    id="calMarksRadio1"
+                                                    value="1"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="calMarksRadio1"
+                                                    >Đối tượng 1</label
+                                                >
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="calMarksRadioOptions"
+                                                    id="calMarksRadio2"
+                                                    value="2"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="calMarksRadio2"
+                                                    >Đối tượng 2</label
+                                                >
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="calMarksRadioOptions"
+                                                    id="calMarksRadio3"
+                                                    value="3"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="calMarksRadio3"
+                                                    >Đối tượng 3</label
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input
+                                            type="number"
+                                            class="calMarks_input-Mark1 form-control"
+                                            id="Mark1"
+                                            placeholder="Điểm môn thứ 1"
+                                            required
+                                        />
+                                        <label for="Mark1">Điểm môn thứ nhất</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input
+                                            type="number"
+                                            class="calMarks_input-Mark2 form-control"
+                                            id="Mark2"
+                                            placeholder="Điểm môn thứ 2"
+                                            required
+                                        />
+                                        <label for="Mark2">Điểm môn thứ hai</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input
+                                            type="number"
+                                            class="calMarks_input-Mark3 form-control"
+                                            id="Mark3"
+                                            placeholder="Điểm môn thứ 3"
+                                            required
+                                        />
+                                        <label for="Mark3">Điểm môn thứ ba</label>
+                                    </div>
+                                    <div>
+                                        <button
+                                            type="submit"
+                                            class="calMarks_btn-submit btn"
+                                        >
+                                            Tính điểm
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="calMarks_result alert alert-success mt-3 fw-semibold"
+                                        role="alert"
+                                    >
+                                        Kết quả:
+                                    </div>
+                                </form>
+                            </div>
+                            <div
+                                class="tab-pane fade"
+                                id="v-calElec"
+                                role="tabpanel"
+                                aria-labelledby="calElec"
+                                tabindex="0"
+                            >
+                                <h3 class="fw-bold">Tính tiền điện</h3>
+                                <form class="calElec d-flex flex-column gap-2 mt-4">
+                                    <div class="form-floating">
+                                        <input
+                                            type="text"
+                                            class="calElec_input-name calElec_input-1 form-control"
+                                            id="calElecName"
+                                            placeholder="Họ và tên"
+                                            required
+                                        />
+                                        <label for="calElecName">Họ và tên</label>
+                                    </div>
+                                    <div class="input-group input-group-sm">
+                                        <div class="form-floating">
+                                            <input
+                                                type="text"
+                                                class="calElec_input-kw form-control"
+                                                id="calElecKW"
+                                                placeholder="Nhập số KW"
+                                                required
+                                            />
+                                            <label for="calElecKW">Nhập số KW</label>
+                                        </div>
+                                        <span class="input-group-text">KW</span>
+                                    </div>
+                                    <div>
+                                        <button
+                                            type="submit"
+                                            class="calElec_btn-submit btn btn-primary"
+                                        >
+                                            Tính tiền điện
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="calElec_result alert alert-success mt-3 fw-semibold"
+                                        role="alert"
+                                    >
+                                        Kết quả:
+                                    </div>
+                                </form>
+                            </div>
+                            <div
+                                class="tab-pane fade"
+                                id="v-calTncn"
+                                role="tabpanel"
+                                aria-labelledby="calTncn"
+                                tabindex="0"
+                            >
+                                <h3 class="fw-bold">Tính thuế thu nhập cá nhân</h3>
+                                <form class="calTncn d-flex flex-column gap-2 mt-4">
+                                    <div class="form-floating">
+                                        <input
+                                            type="text"
+                                            class="calTncnName form-control"
+                                            id="calTncnName"
+                                            placeholder="Nhập họ tên"
+                                            required
+                                        />
+                                        <label for="calTncnName">Nhập họ tên</label>
+                                    </div>
+                                    <div class="input-group input-group-sm">
+                                        <div class="form-floating">
+                                            <input
+                                                type="text"
+                                                class="calTncnTotal form-control"
+                                                id="calTncnTotal"
+                                                placeholder="Tổng thu nhập cá nhân"
+                                                required
+                                            />
+                                            <label for="calTncnTotal"
+                                                >Tổng thu nhập cá nhân</label
+                                            >
+                                        </div>
+                                        <span class="input-group-text">VNĐ</span>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input
+                                            type="number"
+                                            class="calTncnPerson form-control"
+                                            id="calTncnPerson"
+                                            placeholder="Số người phụ thuộc"
+                                            required
+                                        />
+                                        <label for="calTncnPerson"
+                                            >Số người phụ thuộc</label
+                                        >
+                                    </div>
+                                    <div>
+                                        <button
+                                            type="submit"
+                                            class="calTncn_btn-submit btn btn-primary"
+                                        >
+                                            Tính tiền thuế
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="calTncn_result alert alert-success mt-3 fw-semibold"
+                                        role="alert"
+                                    >
+                                        Kết quả:
+                                    </div>
+                                </form>
+                            </div>
+                            <div
+                                class="tab-pane fade"
+                                id="v-calCap"
+                                role="tabpanel"
+                                aria-labelledby="calCap"
+                                tabindex="0"
+                            >
+                                <h3 class="fw-bold">Tính tiền cáp</h3>
+                                <form class="calCap d-flex flex-column gap-2 mt-4">
+                                    <div class="form-floating">
+                                        <select
+                                            class="calCap_select form-select"
+                                            id="floatingSelect"
+                                            required
+                                        >
+                                            <option value="">Chọn loại khách hàng</option>
+                                            <option value="1">Nhà Dân</option>
+                                            <option value="2">Doanh Nghiệp</option>
+                                        </select>
+                                        <label for="floatingSelect">Khách hàng</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input
+                                            type="number"
+                                            class="calCap_input-id form-control"
+                                            id="calCapId"
+                                            placeholder="Nhập mã khách hàng"
+                                            required
+                                        />
+                                        <label for="calCapId">Nhập mã khách hàng</label>
+                                    </div>
+
+                                    <div class="form-floating">
+                                        <input
+                                            type="number"
+                                            class="calCap_input-vip form-control"
+                                            id="calCapVip"
+                                            placeholder="Số kênh cao cấp"
+                                            required
+                                        />
+                                        <label for="calCapVip">Số kênh cao cấp</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input
+                                            type="number"
+                                            class="calCap_input-quantity form-control"
+                                            id="calCapQuantity"
+                                            placeholder="Số kết nối"
+                                            disabled
+                                        />
+                                        <label for="calCapQuantity">Số kết nối</label>
+                                    </div>
+                                    <div>
+                                        <button
+                                            type="submit"
+                                            class="calCap_btn-submit btn btn-primary"
+                                        >
+                                            Tính tiền cáp
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="calCap_result alert alert-success mt-3 fw-semibold"
+                                        role="alert"
+                                    >
+                                        Kết quả:
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOOTSTRAP -->
+        <script src="./vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
